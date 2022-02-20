@@ -8,44 +8,47 @@ To develop a python control code to move the mobilerobot along the predefined pa
 2. Python 3.7
 
 ## Procedure
-
 Step1:
-
+Initiate the MobileRobot.
 <br/>
-
 Step2:
-
+Connect your PC with the MobileRobot.
 <br/>
-
 Step3:
-
+Open Python program.
 <br/>
-
 Step4:
-
+Program the movements of the robot using python code.
 <br/>
-
 Step5:
-
+Execute the python program.
 <br/>
-
 ## Program
 ```python
 from robomaster import robot
 import time
 
-if __name__ == '__main__':
-    ep_robot = robot.Robot()
-    ep_robot.initialize(conn_type="ap")
+if _name_ == '_main_':
+ep_robot = robot.Robot()
+ep_robot.initialize(conn_type="ap")
 
-    ep_chassis = ep_robot.chassis
+ep_chassis = ep_robot.chassis
 
-    ## Write your code here
+'''
+x = speed in x direction( meter/second) [-3.5,3.5]
+y = speed in y direction( meter/second) [-3.5,3.5]
+z = rotation about z axis ( degree/second)[-600,600]
+'''
+ep_chassis.move(x=3, y=0, z=-0, xy_speed=2).wait_for_completed()
+ep_chassis.move(x=0, y=0, z=90, xy_speed=2).wait_for_completed()
+ep_chassis.drive_speed(x=0.5,y=0,z=180)
+ep_chassis.drive_speed(x=0.5,y=0,z=90)
 
-
-
-    
-    ep_robot.close()
+# ep_chassis.drive_speed(x=0.1,y=0,z=0)
+# time.sleep(5)
+# ep_chassis.drive_speed(x=2,y=2,z=5)
+# time.sleep(5)
+# ep_robot.close()
 ```
 
 ## MobileRobot Movement Image:
@@ -53,23 +56,12 @@ if __name__ == '__main__':
 ![robo](./img/robomaster.png)
 
 Insert image here
-
-
-<br/>
-<br/>
-<br/>
+![](mb1.jpeg)
 <br/>
 
 ## MobileRobot Movement Video:
 
-Upload your video in Youtube and paste your video-id here
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-
-<br/>
-<br/>
-<br/>
-<br/>
+(https://youtube.com/shorts/9dcQktqUM0o?feature=share]
 
 ## Result:
 Thus the python program code is developed to move the mobilerobot in the predefined path.
